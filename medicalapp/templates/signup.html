@@ -1,0 +1,33 @@
+{% include 'navbar.html' %}
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>user signup</title>
+  <style>
+
+    form{
+      box-shadow: 20%;
+      
+    }
+
+</style>
+</head>
+<body>
+    <br>
+    <div class="container">
+        <center><h1>Signup</h1></center>
+<form method="POST" class="bootsrtap4">
+    {% csrf_token %}
+    {{form | crispy}}
+
+   
+   
+    {{form.errors}}
+    <button class="btn btn-outline-primary" type="submit">Signup</button>
+</form>
+
+</body>
+</html>

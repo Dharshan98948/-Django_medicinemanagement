@@ -1,0 +1,42 @@
+{% include 'navbar.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>home</title>
+  <style>
+    
+</style>
+</head>
+<body>
+    
+    <div class="container">
+      <center><h2>Medicine details</h2></center>       
+       <table class="table table-hover">
+         <thead>
+           <tr>
+             <th>Name</th>
+             <th>description</th>
+             <th>price</th>
+             <th>expdate</th>
+             <th>Operations</th>
+           </tr>
+         </thead>
+         <tbody>
+           {% for emp in data %}
+           <tr>
+             <td> {{emp.name}}</td>
+             <td> {{emp.description}}</td>
+             <td> {{emp.price}}</td>
+             <td> {{emp.expdate}}</td>
+             <button class="btn btn-outline-success"><a href="update/{{emp.id}}" style="text-decoration:none;">update</a></button>
+               <button class="btn btn-outline-danger"><a href="delete/{{emp.id}}" style="text-decoration:none;">delete</a></button>
+             
+           </tr>
+           {% endfor %}
+         </tbody>
+       </table>
+     </div>
+</body>
+</html>
